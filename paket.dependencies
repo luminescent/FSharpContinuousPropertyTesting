@@ -1,0 +1,9 @@
+source https://api.nuget.org/v3/index.json
+
+nuget FSharp.Core
+nuget Fake
+nuget Microsoft.NET.Test.Sdk 15.3.0-preview-20170628-02 preview
+nuget xunit 2.2.0
+nuget xunit.runner.visualstudio 2.2.0
+nuget FsCheck 2.10.0
+nuget FsCheck.Xunit 2.10.0
