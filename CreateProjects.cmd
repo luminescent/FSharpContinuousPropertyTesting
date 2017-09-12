@@ -6,6 +6,7 @@ cd ..\..\..\%1\tests
 dotnet new xunit -lang F# 
 dotnet add package FsCheck
 dotnet add package FsCheck.Xunit
+dotnet add reference ..\src\FizzBuzz\FizzBuzz.fsproj
 cd ..
 dotnet new sln 
 dotnet sln add src\FizzBuzz\FizzBuzz.fsproj

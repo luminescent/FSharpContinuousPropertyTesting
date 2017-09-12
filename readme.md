@@ -19,6 +19,7 @@ cd ..\..\..\%1\tests
 dotnet new xunit -lang F# 
 dotnet add package FsCheck
 dotnet add package FsCheck.Xunit
+dotnet add reference ..\src\FizzBuzz\FizzBuzz.fsproj
 cd ..
 dotnet new sln 
 dotnet sln add src\FizzBuzz\FizzBuzz.fsproj
@@ -31,9 +32,9 @@ dotnet build
   * Migrate to paket and install Fake (run `InstallPaketAndFake.cmd` from the newly created solution folder) 
 
 ```
-mkdir .paket 
-copy ..\progressive-net-talk\.paket\paket.bootstrapper.exe 
-cd .paket
+mkdir .paket
+cd .paket 
+curl -L -O https://github.com/fsprojects/Paket/releases/download/5.94.0/paket.bootstrapper.exe 
 paket.bootstrapper.exe
 .paket\paket.exe convert-from-nuget 
 echo.>> paket.dependencies

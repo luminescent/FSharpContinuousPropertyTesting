@@ -9,12 +9,12 @@ type IntsEvenlyDivisibleBy3And5 =
     static member Valid() =
         Arb.Default.Int32()
         |> Arb.mapFilter (fun x -> x * 3 * 5)(fun _ -> true)
-
+    
 [<Property>]    
 let  ``Fizz when evenly divisible by 3`` d =
     (d % 3 = 0 && d % 5 <> 0) ==> ("Fizz" = fizzBuzz d)
 
-[<Property>]   
+[<Property>]        
 let ``Buzz when evenly divisible by 5`` d =
     (d % 5 = 0 && d % 3 <> 0) ==> ("Buzz" = fizzBuzz d)
 

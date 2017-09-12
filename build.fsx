@@ -3,20 +3,20 @@ open Fake
 open DotNetCli
 
 
-let runTests() =
-    trace "testing..."
+let test() =
+    trace "Start testing..."
     DotNetCli.Test (fun t -> 
                             {t with WorkingDir = "tests"})
 
-Target "Test" <| fun _ -> runTests()
+Target "Test" <| fun _ -> test()
 
 let build() = 
-    trace "starting build..."
+    trace "Start building..."
 
     Paket.Restore id
     DotNetCli.Build id
 
-    trace "build..."    
+    trace "Done building..."    
 
 Target "Build" <| fun _ -> build()
     
@@ -30,13 +30,11 @@ Target "Watch" (fun _ ->
         for f in e do printfn " - %s" f.Name
         try
           build()
-          runTests()
+          test()
         with e -> 
-          e |> sprintf  "Something bad happened: %A" |>  traceError
+          e |> sprintf  "Error: %A" |>  traceError
       )
 
-  build()
-  runTests()
   System.Console.ReadLine() 
   |> ignore
       
