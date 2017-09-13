@@ -52,6 +52,12 @@ Put `build.fsx` and `build.cmd` in the solution folder. The first is the `Fake` 
 
 ### Talk Outlined
 
+Goal: wire up `paket` and `Fake` to do continuous testing and work through a few examples of property based testing with `FsCheck`.
+
+Get to know the audience: who has used F#? Paket? Fake? Property-based-testing?
+
+Set up the projects as explained above.  
+
 Current situation in the industry: example based testing.
 
 Definiton of property testing: what is a property? How does that change our way of thinking when writing tests? Property is a relationship between the input and the output of a function. Why? Generate random input to cover a multitude of scenarios. Examples of properties: adding items to shopping carts, 0 as a neutral element for addition etc. 
