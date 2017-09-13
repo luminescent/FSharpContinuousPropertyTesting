@@ -49,3 +49,13 @@ dotnet build
   * The build scrips 
 
 Put `build.fsx` and `build.cmd` in the solution folder. The first is the `Fake` build file. `build.cmd` calls on targets from the build file. Call `build.cmd Build` to run the build, and `build.cmd Watch` to run builds and tests continuously. 
+
+### Talk Outlined
+
+Current situation in the industry: example based testing.
+
+Definiton of property testing: what is a property? How does that change our way of thinking when writing tests? Property is a relationship between the input and the output of a function. Why? Generate random input to cover a multitude of scenarios. Examples of properties: adding items to shopping carts, 0 as a neutral element for addition etc. 
+
+More involved example: shuffle function!
+
+Coding examples - FizzBuzz, max element of array

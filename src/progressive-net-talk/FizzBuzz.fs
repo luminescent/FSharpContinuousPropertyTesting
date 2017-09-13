@@ -10,9 +10,9 @@ let (|MultipleOf3|_|) i = if i % 3 = 0 then Some MultipleOf3 else None
 let (|MultipleOf5|_|) i = if i % 5 = 0 then Some MultipleOf5 else None 
 
 // the main function
-let fizzBuzz i = 
-  match i with
+let fizzBuzz x = 
+  match x with
   | MultipleOf3 & MultipleOf5 -> "FizzBuzz" 
   | MultipleOf3 -> "Fizz" 
   | MultipleOf5 -> "Buzz" 
-  | _ -> sprintf "%i" i   
+  | _ -> sprintf "%i" x   
